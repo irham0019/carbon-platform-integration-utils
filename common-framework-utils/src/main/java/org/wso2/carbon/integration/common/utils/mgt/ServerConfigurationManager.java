@@ -27,9 +27,12 @@ import org.wso2.carbon.integration.common.utils.LoginLogoutClient;
 import org.wso2.carbon.integration.common.utils.exceptions.AutomationUtilException;
 import org.wso2.carbon.server.admin.stub.ServerAdminException;
 import org.wso2.carbon.utils.ServerConstants;
-
-import javax.xml.xpath.XPathExpressionException;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -40,6 +43,8 @@ import java.nio.file.StandardCopyOption;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.xpath.XPathExpressionException;
 
 /**
  * This class can be used to replace configuration files at carbon server
@@ -64,7 +69,7 @@ public class ServerConfigurationManager {
      * @param userMode     user mode
      */
     public ServerConfigurationManager(String productGroup, TestUserMode userMode)
-            throws AutomationUtilException, XPathExpressionException, MalformedURLException {
+            throws AutomationUtilException, XPathExpressionException, IOException {
         this.autoCtx = new AutomationContext(productGroup, userMode);
         this.loginLogoutClient = new LoginLogoutClient(autoCtx);
         this.backEndUrl = autoCtx.getContextUrls().getBackEndUrl();
@@ -80,7 +85,7 @@ public class ServerConfigurationManager {
      */
     public ServerConfigurationManager(AutomationContext autoCtx)
             throws
-            AutomationUtilException, XPathExpressionException, MalformedURLException {
+            AutomationUtilException, XPathExpressionException, IOException {
         this.loginLogoutClient = new LoginLogoutClient(autoCtx);
         this.autoCtx = autoCtx;
         this.backEndUrl = autoCtx.getContextUrls().getBackEndUrl();

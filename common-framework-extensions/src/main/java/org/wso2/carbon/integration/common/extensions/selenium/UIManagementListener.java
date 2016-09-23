@@ -30,7 +30,6 @@ import org.testng.ITestResult;
 import org.wso2.carbon.automation.engine.frameworkutils.FrameworkPathUtil;
 import org.wso2.carbon.automation.extensions.selenium.BrowserManager;
 import org.wso2.carbon.integration.common.extensions.utils.ExtensionCommonConstants;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;

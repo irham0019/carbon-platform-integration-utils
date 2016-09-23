@@ -28,10 +28,10 @@ import org.wso2.carbon.automation.engine.exceptions.AutomationFrameworkException
 import org.wso2.carbon.automation.engine.extensions.ExecutionListenerExtension;
 import org.wso2.carbon.integration.common.extensions.exceptions.AutomationExtensionException;
 import org.wso2.carbon.integration.common.extensions.utils.AutomationXpathConstants;
-
-import javax.xml.xpath.XPathExpressionException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.xpath.XPathExpressionException;
 
 /**
  * Test automation extension class to populate users before test suite execution

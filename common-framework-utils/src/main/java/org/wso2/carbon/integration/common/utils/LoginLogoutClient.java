@@ -25,11 +25,10 @@ import org.wso2.carbon.authenticator.stub.LogoutAuthenticationExceptionException
 import org.wso2.carbon.automation.engine.context.AutomationContext;
 import org.wso2.carbon.integration.common.admin.client.AuthenticatorClient;
 import org.wso2.carbon.integration.common.utils.exceptions.AutomationUtilException;
+import java.io.IOException;
+import java.rmi.RemoteException;
 
 import javax.xml.xpath.XPathExpressionException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.rmi.RemoteException;
 
 /**
  * A utility for logging into & logging out of Carbon servers
@@ -39,7 +38,8 @@ public class LoginLogoutClient {
     private AutomationContext automationContext;
     private AuthenticatorClient loginClient;
 
-    public LoginLogoutClient(AutomationContext context) throws AutomationUtilException {
+    public LoginLogoutClient(AutomationContext context) throws AutomationUtilException,
+                                                               IOException {
         try {
             this.automationContext = context;
             String backendURL = context.getContextUrls().getBackEndUrl();

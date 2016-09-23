@@ -20,7 +20,6 @@ package org.wso2.carbon.integration.common.extensions.utils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.automation.engine.frameworkutils.enums.OperatingSystems;
-
 import java.io.File;
 
 public class CommonExtensionUtils {

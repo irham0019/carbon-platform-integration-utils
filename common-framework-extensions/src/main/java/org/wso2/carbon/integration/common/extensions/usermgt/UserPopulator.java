@@ -18,7 +18,6 @@
 
 package org.wso2.carbon.integration.common.extensions.usermgt;
 
-import org.apache.axis2.AxisFault;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.NodeList;
@@ -35,18 +34,12 @@ import org.wso2.carbon.integration.common.extensions.exceptions.AutomationExtens
 import org.wso2.carbon.integration.common.extensions.utils.AutomationXpathConstants;
 import org.wso2.carbon.integration.common.extensions.utils.ExtensionCommonConstants;
 import org.wso2.carbon.integration.common.utils.LoginLogoutClient;
-import org.wso2.carbon.tenant.mgt.stub.TenantMgtAdminServiceExceptionException;
 import org.wso2.carbon.user.mgt.stub.UserAdminUserAdminException;
-import org.xml.sax.SAXException;
-
-import javax.xml.stream.XMLStreamException;
-import javax.xml.xpath.XPathExpressionException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.xpath.XPathExpressionException;
 
 /**
  * This class is responsible for adding tenants and users

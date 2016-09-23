@@ -17,7 +17,6 @@
 */
 package org.wso2.carbon.integration.common.tests;
 
-import org.apache.axis2.AxisFault;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.json.simple.parser.JSONParser;
@@ -36,18 +35,22 @@ import org.wso2.carbon.webapp.mgt.stub.WebappAdminStub;
 import org.wso2.carbon.webapp.mgt.stub.types.carbon.VersionedWebappMetadata;
 import org.wso2.carbon.webapp.mgt.stub.types.carbon.WebappMetadata;
 import org.wso2.carbon.webapp.mgt.stub.types.carbon.WebappsWrapper;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
-import javax.xml.xpath.XPathExpressionException;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+import javax.xml.xpath.XPathExpressionException;
 
 import static org.testng.Assert.assertTrue;
 

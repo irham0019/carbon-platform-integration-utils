@@ -18,7 +18,6 @@
 
 package org.wso2.carbon.integration.common.tests;
 
-import org.apache.axis2.AxisFault;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.testng.annotations.BeforeSuite;
@@ -29,9 +28,10 @@ import org.wso2.carbon.automation.engine.context.AutomationContext;
 import org.wso2.carbon.integration.common.admin.client.LogViewerClient;
 import org.wso2.carbon.logging.view.stub.LogViewerLogViewerException;
 import org.wso2.carbon.logging.view.stub.types.carbon.LogEvent;
+import java.io.IOException;
+import java.rmi.RemoteException;
 
 import javax.xml.xpath.XPathExpressionException;
-import java.rmi.RemoteException;
 
 import static org.testng.Assert.assertFalse;
 
@@ -43,7 +43,7 @@ public abstract class ServerStartupBaseTest {
     public String productName;
 
     @BeforeSuite(alwaysRun = true)
-    public void initialize() throws XPathExpressionException, AxisFault {
+    public void initialize() throws XPathExpressionException, IOException {
         AutomationContext autoContext = new AutomationContext();
         logViewerClient = new LogViewerClient(autoContext.getContextUrls().getBackEndUrl(),
                 autoContext.getSuperTenant().getTenantAdmin().getUserName(),
